@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Papatap Clone</title>
+	<link rel="stylesheet" type="text/css" href="mypapatap.css">
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="js/paper-full.js"></script>
+<!-- Load the howler audo library -->
+<script type="text/javascript" src="js/howler/dist/howler.js"></script>
+<!-- external javascript file -->
+<!-- <script type="text/javascript" src="js/data.js"></script> -->
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+	
+function randomColor(){
+	var color = "";
+		color = "rgb(";
+	for(var i = 1; i <= 3; i++){
+		var randomizer = Math.floor(Math.random() * 255);
+		if(i < 3){
+			color += randomizer + ",";
+		}else {
+			color += randomizer + ")";
+		}
+	}
+	return color;
+}
+
+
+
+	var keyStrokes = {
+	a:{
+		color: randomColor(),
+		sound: new Howl({
+  			   src: ['../sounds/bubbles.mp3']
+			   }),
+		points: 6,
+		radius1: 100,		
+		radius2: 35
+	},
+	s:{
+		color: randomColor(),
+		sound: new Howl({
+  			   src: ['../sounds/flash-1.mp3']
+			   }),
+		points: 10,
+		radius1: 200,
+		radius2: 20
+	},
+	d:{
+		color: randomColor(),
+		sound: new Howl({
+  			   src: ['../sounds/flash-2.mp3']
+			   }),
+		points: 20,
+		radius1: 200,
+		radius2: 100
+	},
+	f:{
+		color: randomColor(),
+		sound: new Howl({
+  			   src: ['../sounds/flash-3.mp3']
+			   }),
+		points: 3,
+		radius1: 200,
+		radius2: 20
+	},
+	q:{
+		color: randomColor(),
+		sound: new Howl({
+			   src: ['../sounds/clay.mp3']
+			   }),
+		size:500
+	},
+	w:{
+		color: randomColor(),
+		sound: new Howl({
+			   src: ['../sounds/confetti.mp3']
+			   }),
+		size:300
+	},
+	e:{
+		color: randomColor(),
+		sound: new Howl({
+			   src: ['../sounds/corona.mp3']
+			   }),
+		size:100
+	},
+	r:{
+		color: randomColor(),
+		sound: new Howl({
+			   src: ['../sounds/dotted-spiral.mp3']
+			   }),
+		size:1000
+	}
+}
+	var circles = [];
+	
+	function onKeyDown(event){
+		var key = keyStrokes[event.key];
+		var maxPoint = new Point(view.size.width, view.size.height);
+		var random = Point.random();
+		var randomPoint = random * maxPoint;
+		key.color = randomColor();
+		if(event.key === 'a' || event.key === 's' || event.key === 'd' || event.key === 'f'){			
+			var star = new Path.Star(randomPoint,key.points,key.radius1,key.radius2);
+			star.fillColor = key.color;
+			key.sound.play();
+			circles.push(star);
+	 	}else if (event.key  === "q" || event.key  === "w" || event.key  === "e" || event.key  === "r"){
+	 		console.log(key.size);
+	 		var circle = new Path.Circle(new Point(randomPoint),key.size);
+	 		circle.fillColor = key.color;
+	 		key.sound.play();
+	 		circles.push(circle);
+
+	 	}
+	}
+	function onFrame(event){
+		for (var i = 0; i < circles.length; i++){
+			circles[i].rotate(10);
+			circles[i].scale(0.9);
+		}
+	}
+</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body
+{
+	background-image: url("football-game.jpg");
+	background-position: center;
+	background:cover;
+	
+}
+h1,h2,p,div
+	{
+		margin:auto;
+		text-align:center;
+		padding-right:20%;
+	}
+input
+{
+	font-size:2em;
+}
+h1 {
+  font-size: 6em;
+  padding-top: 12%;
+  text-shadow: 5px 3px 5px white;
+  padding-bottom: 2%;
+}
+h2
+{
+	font-size:4em;
+	padding-top: 2%;
+	text-shadow: 5px 3px 5px grey;
+}
+p
+{
+	font-size:2em;
+	padding-bottom:2%
+}
+
+button{
+	background-color:transparent;
+	margin:1%;
+	color: white;
+	padding:5px;	
+	border:none;
+}
+button:hover
+{
+	border:grey solid 1px;
+}
+.btn
+{
+	font-size:2em;
+}
+.input-win-score{
+	max-width: 5%;
+}
+.reset-btn
+{
+	font-size:1.5em;
+}
+.player-win
+{
+	color:white;
+}

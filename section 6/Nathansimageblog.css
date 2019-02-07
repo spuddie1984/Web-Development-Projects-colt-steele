@@ -1,0 +1,28 @@
+h2{
+	margin:1.66%;
+	width:30%;
+	font-family: 'Roboto', sans-serif;
+}
+hr{
+	width:30%;
+	margin-left:1.66%;
+	text-align: left;
+}
+img{
+	width:30%;
+	float:left;
+	margin:1.66%;
+}
+
+body{
+	background-color: #fcfcfc;
+}
+footer{
+	text-align:center;
+	color: #545454;
+	font-size: 1em;
+	font-family: 'Roboto', sans-serif;
+}
+img:hover{
+	opacity: 0.2;
+}

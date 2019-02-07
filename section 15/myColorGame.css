@@ -1,0 +1,96 @@
+body	
+{
+	font-family: "Montserrat", "monospace";
+	background-color: black;
+	margin:0;
+}
+
+nav	
+{
+	background-color: steelblue;
+	color:white;
+	text-align: center;
+	font-size:20px;
+	text-transform: uppercase;
+	padding-top:15px;
+	margin:0 0 2% 0;
+
+}
+nav	h1
+{
+	font-family: "Garamond", "serif";
+	font-weight: lighter;
+	margin-top:0;
+}
+#rgbDisplay
+{
+	font-size: 2em;
+	font-weight: normal;
+}
+#controls
+{
+	display: flex;
+	background:white;
+	width: 100%;
+	height: 1.5em;
+	align-items: center;
+	justify-content: center;
+	
+}
+.selected
+{
+	background-color: steelblue;
+	color: white;
+}
+button
+{
+	background:none;
+	border: none;
+	color:steelblue;
+	font-size:0.8em;
+	height: 100%;
+	font-weight: bold;
+	text-transform: uppercase;
+	outline: none;
+}
+#reset
+{
+	margin-right: 10%;
+}
+.mode
+{
+	padding:1px 4px 1px 4px;
+}
+#message 
+{
+	font-size: 0.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: "arial";
+	color: steelblue;
+	margin-right: 10%;
+}
+.colors
+{
+	display:grid;
+	grid-template-rows: 1fr 1fr ;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+	max-width: 600px;
+	margin:auto;
+	
+}
+.colors > div
+{
+	height: 150px;
+	width: auto;
+	background-color: white;
+	border-radius: 10px;
+	transition: all 0.75s;
+
+}
+#controls button:hover
+{
+	background-color:steelblue;
+	color:white;
+}

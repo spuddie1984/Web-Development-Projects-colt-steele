@@ -1,0 +1,25 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  width: 80%;
+  border: #bdc3c7 solid 15px;
+  margin: 2% auto 2% auto;
+}
+
+.post {
+  padding: 2% 2% 0% 2%;
+}
+.post h2 {
+  color: #2c3e50;
+}
+.post p:nth-of-type(1) {
+  border-left: #bdc3c7 solid 5px;
+  padding-left: 5px;
+}
+
+.date {
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/*# sourceMappingURL=nathans_blog.css.map */
