@@ -32,7 +32,10 @@ function	rgbRandomizer () {
 function rgbPicker () {
 	var getRandomId = "color-" + Math.ceil(Math.random() * mode);
 	var randomPicker = document.getElementById(getRandomId).style.background;
-	document.getElementById("rgbDisplay").innerHTML = randomPicker ;
+	// get rid of anything that is outside of the rgb() statement
+	const search = randomPicker.search(/\)/g);
+	randomPicker = randomPicker.slice(0,search + 1);
+	document.getElementById("rgbDisplay").innerHTML = randomPicker;
 	return randomPicker;
 }
 
