@@ -1,0 +1,15 @@
+{
+  "name": "my-weather-app",
+  "version": "1.0.0",
+  "description": "This app will display the weather of a city that is inputted by the user.  Its based on colt steele's movie api app, in that the principles are very similar.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Collins",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.0"
+  }
+}
