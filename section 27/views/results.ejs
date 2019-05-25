@@ -1,0 +1,39 @@
+<%- include('./partials/head')%>
+
+<%# Define any variables here %>
+<% const weatherIcon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`; %>
+<% let degrees;  %>
+
+<%# Check for degrees unit type that we need to display -> "F" or "C" %>
+<% if(degreesType.degreesUnit.toLowerCase() === "metric"){
+       degrees = "C";
+    }else{
+       degrees = "F";
+    }    
+    %>
+    
+<main class="container">
+    <section class="row justify-content-md-center mt-5">
+        <div class="col-md-8 background p-5">
+            <div id="weather-data">
+                <h4>Weather Data for <%= data.name %></h4>
+                <p><small>Please Note: At the Moment this is only for Australian Cities or Towns</small></p>
+                <section id="current-temp">
+                    <%= Math.round(data.main.temp) %>&deg;<%= degrees %>
+                </section>
+                <section id="current-conditions">
+                    <div id=min-max-temp><span>Min: <%= Math.round(data.main.temp_min) %>&deg;<%= degrees %></span> <span>Max: <%= Math.round(data.main.temp_max)%>&deg;<%= degrees %></span></div> 
+                    <div id="weather-icon"><img src="<%= weatherIcon %>" ></div> 
+                    <div id="weather-description"><%= data.weather[0].description %>
+                    <div id="humidity">Humidity: <%= data.main.humidity %>&percnt;</div>
+                    <div id="pressure">Pressure: <%= data.main.pressure %>Hpa</div>
+                    <div id=wind-speed>Wind Speed: <%= Math.round(data.wind.speed * 3.6) %>Km/hr</div>
+                    <div id="wind-direction">Wind Direction: <%= data.wind.deg %>&deg;</div>
+                    <button type="button" class="btn btn-primary mt-3" onclick=location.href="/">Try Again</button>
+                </section>
+            </div>  
+        </div>
+    </section>
+</main>  
+
+<%- include('./partials/footer')%>

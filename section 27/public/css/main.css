@@ -1,0 +1,26 @@
+
+/* basic styles for the whole project */
+
+.background{
+    border: 1px solid grey;
+}
+
+#submit-button{
+    margin: auto;
+    display: flex;   
+}
+#weather-form h4{
+    text-align: center;
+}
+
+#weather-form p{
+    text-align: center;
+}
+
+#weather-data{
+    text-align: center;
+}
+
+#weather-data h4{
+    margin-bottom: 0;
+}
