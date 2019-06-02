@@ -5,11 +5,12 @@
 
 const express = require('express')
 const request = require('request');
+require('dotenv').config()
 const app = express()
 
 // app settings
 app.set( 'view engine', 'ejs' );
-const port = 3000;
+const port = process.env.PORT;
 // setup static js files for the home route(to be used by the search form)
 app.use( express.static( "public" ) );
 
@@ -33,8 +34,8 @@ app.get( '/results', (req, res) => {
     // for now we will stick to towns and cities within Australia
     const countryCode = `au`;
     // url string and api key
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=${units}`;
-    const apiKey = `&APPID=c4643dbe2d6c7d4d1f371315ad62ae07`; 
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=${units}&APPID=`;
+    const apiKey = process.env.API_KEY; 
     request(url + apiKey ,function(error,response,body){
         if( !error && response.statusCode === 200 ){
             // convert whatever data is in the returned body into JSON 
