@@ -1,0 +1,23 @@
+{
+  "name": "yelp-camp",
+  "version": "1.0.0",
+  "description": "A Web Application based on Colt Steele's Web Developer Bootcamp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spuddie1984/Web-Development-Projects-colt-steele.git"
+  },
+  "author": "Nathan Collins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spuddie1984/Web-Development-Projects-colt-steele/issues"
+  },
+  "homepage": "https://github.com/spuddie1984/Web-Development-Projects-colt-steele#readme",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}
