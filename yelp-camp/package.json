@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/spuddie1984/Web-Development-Projects-colt-steele#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1"
   }
