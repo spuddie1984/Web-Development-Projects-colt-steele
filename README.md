@@ -11,7 +11,7 @@ setup basic express structure initialize with npm init and add github details,
 #####2nd Commit
 Add CampGround Route (*lists all campgrounds*) and landing page route. make an array of objects (*camps*) that include the image of the campground and the name. Test to see if the routes work!
 Setup views folder structure and partials like header and footer,add a env file for environment variables.
-#####3rd Commit
+#####3rd Commit#####
 ######Routes######
 - Add *campgrounds/new* route 
 This route is a form so that the user can add a new campground (*2 inputs one for name of the campground 1 for the image url for that campground*-**More features will be added later**). This form will be sent to the *campgrounds* post route for processing.
@@ -24,3 +24,4 @@ This Route will process the form data and add that data to the campgrounds array
 - Add link to form on campgrounds template 
 - Setup includes file with folder structure for js and css files
 - add an external style sheet to be used app wide (using app.use(express.static()))
+######
