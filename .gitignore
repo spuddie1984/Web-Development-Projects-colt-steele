@@ -1,5 +1,3 @@
-/section\ 25/node_modules
-/section\ 27/node_modules
-/section\ 27/.env
-/yelp-camp/node_modules
+node_modules
+.env
 /yelp-camp/npm-debug.log
