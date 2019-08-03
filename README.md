@@ -3,14 +3,18 @@ A collection of Web Development Projects based on the Web Developer Bootcamp by 
 https://www.udemy.com/the-web-developer-bootcamp/
 
 ## Notes
-### Restful routing Part 1
-name        url        verb           desc
-++++++++++++++++++++++++++++++++++++++++++++++++
-INDEX      /items      GET   Displays a list of all items
-NEW        /items/new  GET   Displays a form to add new items 
-CREATE     /items      POST  Add a new item to the DB
-SHOW       /items/:id  GET   Show info about one item only
+### 7 RESTful Routes
 
+| name    |     url         |  verb  |                   Decription                      |
+|---------|-----------------|--------|---------------------------------------------------|
+| INDEX   | /items          |  GET   | Displays a list of all items                      |
+| NEW     | /items/new      |  GET   | Displays a form to add new items                  |
+| CREATE  | /items          |  POST  | Add a new item to the DB                          |
+| SHOW    | /items/:id      |  GET   | Show info about one item only                     |
+| EDIT    | /items/:id/edit |  GET   | Show edit form for one item                       |
+| UPDATE  | /items/:id      |  PUT   | Update a particular item, then redirect somewhere |
+| DESTROY | /items/:id      | DELETE | Deleter a particular item, then redirect somewhere|
+ 
 ## Yelp Camp Application
 
 ### Basics
