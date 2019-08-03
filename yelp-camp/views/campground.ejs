@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+<section class="row">
+    <div class="col-md-10 col-sm-12 mx-5">
+        <h1><%= campground.name %></h1>  
+        <img class="img-fluid" src="<%= campground.image %>" alt="This is a campground called <%= campground.name %>">
+        <p><%= campground.description %></p>
+        <a class="btn btn-secondary" href="/campgrounds">Go Back</a>
+    </div>
+</section>
+<%- include('partials/footer') %>

@@ -2,6 +2,14 @@
 A collection of Web Development Projects based on the Web Developer Bootcamp by Colt Steele
 https://www.udemy.com/the-web-developer-bootcamp/
 
+## Notes
+### Restful routing Part 1
+name        url        verb           desc
+++++++++++++++++++++++++++++++++++++++++++++++++
+INDEX      /items      GET   Displays a list of all items
+NEW        /items/new  GET   Displays a form to add new items 
+CREATE     /items      POST  Add a new item to the DB
+SHOW       /items/:id  GET   Show info about one item only
 
 ## Yelp Camp Application
 
@@ -16,7 +24,6 @@ Setup views folder structure and partials like header and footer,add a env file 
 ###### Routes
 - Add *campgrounds/new* route 
 This route is a form so that the user can add a new campground (*2 inputs one for name of the campground 1 for the image url for that campground*-**More features will be added later**). This form will be sent to the *campgrounds* post route for processing.
-
 - Add *campgrounds* post route
 This Route will process the form data and add that data to the campgrounds array(*The array will be converted into a database later*).  After processing it will redirect to the get *campgrounds* route
 ###### Styling Etc
@@ -24,4 +31,20 @@ This Route will process the form data and add that data to the campgrounds array
 - setup header and footer partials. Add them to all the templates.
 - Add link to form on campgrounds template 
 - Setup includes file with folder structure for js and css files
+- Add a basic bootstrap nav menu
 - add an external style sheet to be used app wide (using app.use(express.static()))
+
+### Database Intergration, styling and restful routing updates
+
+#### 4th Commit
+##### Database 
+- Setup and Install mongoose 
+- Setup Campground model/schema
+- Use campground model inside our routes
+##### Styling
+- Improve campgrounds grid layout...add spacing use bootstrap cards for each campground
+##### Restful Routing and whatever else i forgot
+- Add comments to each route showing the restful routing name 
+- Add a show route template
+- Add a description field to the form and update routing to reflect that (including our campgrounds model)
+- Add a link button to each campground that routes to the show page (individual campgrounds)
