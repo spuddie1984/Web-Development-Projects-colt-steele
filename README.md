@@ -52,3 +52,20 @@ This Route will process the form data and add that data to the campgrounds array
 - Add a show route template
 - Add a description field to the form and update routing to reflect that (including our campgrounds model)
 - Add a link button to each campground that routes to the show page (individual campgrounds)
+
+#### 5th Commit
+##### Database Refactor
+- Add a seed file and reseed every server restart
+- Create a DB modules directory and put all DB models there
+- use module.exports and require models into other files
+
+##### Comments Model 
+- Add Comment Model text, Author
+- display comments on campground show page
+- Add nested comment routes
+- add new and create comment routes 
+- add new comment form
+
+##### Styling 
+- Add sidebar to show page
+- update styling on show page 
