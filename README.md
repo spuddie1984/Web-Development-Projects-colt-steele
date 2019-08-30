@@ -69,3 +69,22 @@ This Route will process the form data and add that data to the campgrounds array
 ##### Styling 
 - Add sidebar to show page
 - update styling on show page 
+
+##### Authentication
+#### 6th Commit
+- Add user model (username, password)
+- install passport 
+- Add register routes 
+- Add template
+- Configure Passport
+- Add login routes
+- Add Login Template
+- Add Logout Route
+- Prevent user from adding a comment if not signed in
+- Add links to navbar
+- Show / hide auth links correctly
+
+
+
+
+
