@@ -29,31 +29,31 @@ const seedDB = () => {
         }
     });
     // seed the DB
-    for(seed of seeds){
-        Campgrounds.create({
-            name: seed.name,
-            image: seed.image,
-            description: seed.description,
-        }, (err,createCampground) => {
-            if(err) {
-                console.log(err);
-            } else {
-                console.log(`You've successfully created ${createCampground.name} Campground`);
-                Comments.create({
-                    author: "nathan",
-                    text: "I love camping!!!"
-                }, (err, newComment) => {
-                    if(err) {
-                        console.log(err);
-                    } else {
-                        createCampground.comment.push(newComment);
-                        createCampground.save();
-                        console.log("Added New Comment");
-                    }
-                });
-            }
-        });
-    } 
+    // for(seed of seeds){
+    //     Campgrounds.create({
+    //         name: seed.name,
+    //         image: seed.image,
+    //         description: seed.description,
+    //     }, (err,createCampground) => {
+    //         if(err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log(`You've successfully created ${createCampground.name} Campground`);
+    //             Comments.create({
+    //                 author: "nathan",
+    //                 text: "I love camping!!!"
+    //             }, (err, newComment) => {
+    //                 if(err) {
+    //                     console.log(err);
+    //                 } else {
+    //                     createCampground.comment.push(newComment);
+    //                     createCampground.save();
+    //                     console.log("Added New Comment");
+    //                 }
+    //             });
+    //         }
+    //     });
+    // } 
 }
 
 module.exports = seedDB;

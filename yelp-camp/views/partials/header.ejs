@@ -34,6 +34,7 @@
                     <a class="nav-link" href="/register">Signup</a>
                 </li>
                 <% } else { %>
+                    <span class="navbar-text"><%= currentUser.username %> is Logged In</span>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Signout</a>
                 </li>

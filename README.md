@@ -84,6 +84,16 @@ This Route will process the form data and add that data to the campgrounds array
 - Add links to navbar
 - Show / hide auth links correctly
 
+##### Refactoring
+#### 7th Commit
+- Use Express router to reorganise all routes
+- Associate Users and Comments
+- Save Authors name (person signed in) to comments automatically
+- Prevent an unauthorized user from creating campgrounds
+- Save username + id along with newly created campground
+- on show page display who created the campground
+
+
 
 
 

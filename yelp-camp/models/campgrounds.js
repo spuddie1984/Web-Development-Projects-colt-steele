@@ -8,6 +8,13 @@ const campgroundSchema = new Schema({
    name: String,
    image: String,
    description: String,
+   author: {
+      id: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "Users"
+      },
+      username: String,
+   },
    comment: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Comments'
