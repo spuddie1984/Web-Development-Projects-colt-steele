@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'),
       Campgrounds = require('./models/campgrounds'),
       Comments = require('./models/comments');
-
+      Users = require('./models/users')
 
 const seeds = [{ 
     name : "Pine Hill", 
@@ -26,6 +26,16 @@ const seedDB = () => {
         } else {
             console.log("You sucessfully deleted all the Campgrounds");
             console.log(DeletedCollections)
+        }
+    });
+    Comments.deleteMany({}, (err) => {
+        if(err) {
+            console.log(err);
+        }
+    });
+    Users.deleteMany({}, (err) => {
+        if(err) {
+            console.log(err);
         }
     });
     // seed the DB

@@ -5,6 +5,7 @@ const express = require('express'),
       passport = require('passport'),
       localStrategy = require('passport-local'),
       session = require('express-session'),
+      methodOverride = require('method-override'),
       User = require('./models/users'),
       seedDB = require('./seedDB'),
       indexRoutes = require('./routes/index'),
@@ -43,7 +44,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 // setup static includes folder
 app.use(express.static(__dirname + "/includes" ));
-
+// setup method override override like this .... method="POST" action="/url/?_method=delete
+app.use(methodOverride('_method'));
 // middleware, pass local username into all template
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
@@ -59,6 +61,7 @@ app.use('/campgrounds/:id/comment',commentRoutes);
 ////////// DATABASE SETUP //////////
 
 mongoose.connect('mongodb://localhost/yelpcamp',{ useNewUrlParser: true });
+mongoose.set('useFindAndModify', false);
 
 // seedDB(); // Seed the DB
 
