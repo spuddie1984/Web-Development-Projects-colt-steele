@@ -13,7 +13,7 @@ https://www.udemy.com/the-web-developer-bootcamp/
 | SHOW    | /items/:id      |  GET   | Show info about one item only                     |
 | EDIT    | /items/:id/edit |  GET   | Show edit form for one item                       |
 | UPDATE  | /items/:id      |  PUT   | Update a particular item, then redirect somewhere |
-| DESTROY | /items/:id      | DELETE | Deleter a particular item, then redirect somewhere|
+| DESTROY | /items/:id      | DELETE | Delete a particular item, then redirect somewhere|
  
 ## Yelp Camp Application
 
@@ -70,31 +70,81 @@ This Route will process the form data and add that data to the campgrounds array
 - Add sidebar to show page
 - update styling on show page 
 
-##### Authentication
+### Authentication
+
 #### 6th Commit
+##### User Model
 - Add user model (username, password)
 - install passport 
+
+##### Add Authentication routes
 - Add register routes 
 - Add template
 - Configure Passport
 - Add login routes
 - Add Login Template
 - Add Logout Route
+
+##### Add auth middleware and navbar logic for user login/out etc...
 - Prevent user from adding a comment if not signed in
 - Add links to navbar
 - Show / hide auth links correctly
 
-##### Refactoring
+### Refactor Routes and Associations
+
 #### 7th Commit
+##### Add Router
 - Use Express router to reorganise all routes
+
+##### Associations for User and Comment Models
 - Associate Users and Comments
+
+##### Refactor Routes 
 - Save Authors name (person signed in) to comments automatically
 - Prevent an unauthorized user from creating campgrounds
 - Save username + id along with newly created campground
 - on show page display who created the campground
 
+### Full CRUD + more Authorizations
 
+#### 8th Commit
 
+##### CRUD Delete + Edit
+
+- Add Method-Override module
+- Add Edit route for campgrounds
+- Add link to edit page
+- Add Update Route
+- Add Detroy Route
+- Delete associated comments
+- Add delete button
+- Add edit route for comments
+- Add Edit button for comments
+- Add Update comment route
+- Add destroy comment route
+- Add delete comment button
+
+##### Authorization/Permissions for Edit + Delete campgrounds
+ Use mongoose equals() method to compare user currently logged in (if there is a user logged in) with the user who created the campground or comment
+- Users can only edit their own campground/s and comments (use middleware function)
+- Users can only delete their own campground/s and comments (use middleware function)
+- Hide/Show edit and delete buttons depending on if user owns that campground or not same applies for comments (if statement in show template)
+
+#### 9th Commit
+
+##### Flash Messages
+
+- Add + Install flash-messages Module
+- Add flash messages to routes (edit, delete, login logout)
+- Add bootstrap to flash message 
+- Add if statements so that error messages show bootstrap red error and green for successful
+- Add meaningful error and success messages 
+- Add comment stars and campground price
+- Add days since comment created
+
+##### Landing Page Refactor
+
+- Add Image Slider to landing page
 
 
 

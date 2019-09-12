@@ -1,7 +1,8 @@
 const express = require('express'),
       router = express.Router(),
       User = require('../models/users'),
-      passport = require('passport');
+      passport = require('passport'),
+      middleware = require('../middleware');
 
 
 // Landing Page Route
@@ -20,38 +21,36 @@ router.post('/register', (req, res) => {
     User.register(newUser,req.body.password, (err, user) => {
         if(err) {
             console.log(err);
+            req.flash('error', err.message);
             return res.render('users/register')
         } else {
             passport.authenticate("local")(req,res, () => {
+                req.flash('success', 'You are logged in!!!');
                 res.redirect('/campgrounds');
             });   
         }
-    })
+    });
 });
 
 // LOGIN ROUTE
-router.get('/login', (req, res) => {
+router.get('/login', (req, res) => { 
     res.render('users/login');
-})
+});
 
 // handle login logic
 router.post('/login', passport.authenticate("local", {
     successRedirect: "/campgrounds",
-    failureRedirect: "/login"
-}),(req, res) => {});
+    failureRedirect: "/login",
+    successFlash:'you are logged in!!!',
+    failureFlash: true
+    })
+);
 
 // LOGOUT ROUTE
 router.get('/logout', (req, res) => {
     req.logout();
+    req.flash('success', 'You successfully logged out !!')
     res.redirect("/campgrounds");
 }) 
 
 module.exports = router;
-
-// middleware, check if user is logged in
-function isLoggedIn(req,res,next) {
-    if(req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/login');
-}

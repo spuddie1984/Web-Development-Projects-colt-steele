@@ -10,11 +10,7 @@
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Custom Css -->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-
-    
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 </head>
 
 <body>
@@ -42,3 +38,10 @@
             </ul>
         </div>
     </nav>
+    <main class="container">
+        <% if(success_message && success_message.length > 0) { %> 
+            <div class="alert alert-success mt-4" role="alert"><%= success_message %></div>
+        <% } %>
+        <% if(error_message && error_message.length > 0) { %>
+            <div class="alert alert-danger mt-4" role="alert"><%= error_message %></div>
+        <% } %>

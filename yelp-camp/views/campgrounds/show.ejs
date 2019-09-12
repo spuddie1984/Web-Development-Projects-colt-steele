@@ -1,6 +1,4 @@
 <%- include('../partials/header') %>
-
-<section class="container">
     <div class="row mt-5">
         <div class="col-md-4 col-sm-12 mx-2">
             <div class="card">
@@ -20,7 +18,7 @@
                 <div class="card-body">
                     <div class="d-flex">
                         <h3 class="p-2"><%= campground.name %></h3> 
-                        <h4 class="p-2 ml-auto">$0.00/night</h4>
+                        <h4 class="p-2 ml-auto">$<%= campground.price %>/night</h4>
                     </div>
                     <p class="card-text pb-3"><%= campground.description %></p>
                     <p class="d-inline-flex"><em>Submitted by <%= campground.author.username %></em></p>
@@ -41,11 +39,16 @@
                     </div>
                     <div class="card-content mt-2">
                         <% for(comment of campground.comment){ %>
+                            <% let stars = "&starf;";
+                            for(let star = 1; star < parseInt(comment.rating); star++) {
+                                stars += "&starf;";
+                            }
+                            %>
                             <div>
-                                <span>&#9733;&#9733;&#9733; <em><%= comment.author.username %></em></span><span class="float-right">5 days ago</span></h5>
+                                <span><%- stars %> <em><%= comment.author.username %></em></span><span class="float-right"><% let days = Math.round((Date.now() - comment.createdAt) / 86400000 ); (days >= 1) ? days = `${days} ago` : days = "Created today"; %><%= days %></span></h5>
                             </div>
                             <p><%= comment.text %></p>
-                            <% if(currentUser && campground.author.id.equals(currentUser.id)) { %>
+                            <% if(currentUser && comment.author.id.equals(currentUser.id)) { %>
                                 <form method="POST" class="d-inline-flex" action="/campgrounds/<%= campground.id %>/comment/<%= comment.id %>?_method=delete">
                                     <button type="submit" class="btn btn-danger btn-sm mx-1">Delete</button>
                                 </form>
@@ -57,6 +60,6 @@
             </div>
         </div>
     </div>
-</section>
+</main>
 
 <%- include('../partials/footer') %>

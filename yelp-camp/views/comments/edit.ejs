@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-<main class="container">
     <section class="row d-flex justify-content-center my-4">
         <div class="col-md-6">
             <div class="jumbotron py-4">
@@ -16,6 +15,13 @@
                 <div class="form-group">
                     <textarea class="form-control" name="comment[text]" id="comment" placeholder="Your Comment" required><%= editComment.text %></textarea>
                 </div>
+                <div class="alert alert-info" role="alert">
+                    Please give a rating from 1 to 5
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="rating" name="comment[rating]" value="<%= editComment.rating %>" min="1" max="5" placeholder="Rating from 1 to 5">
+                </div>
+                
                 <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
             </form>
         </div>

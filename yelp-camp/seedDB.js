@@ -28,14 +28,20 @@ const seedDB = () => {
             console.log(DeletedCollections)
         }
     });
-    Comments.deleteMany({}, (err) => {
+    Comments.deleteMany({}, (err, deletedComments) => {
         if(err) {
             console.log(err);
+        } else {
+            console.log("You successfully deleted all comments");
+            console.log(deletedComments);
         }
     });
-    Users.deleteMany({}, (err) => {
+    Users.deleteMany({}, (err, deletedUsers) => {
         if(err) {
             console.log(err);
+        } else {
+            console.log("You successfully deleted all users");
+            console.log(deletedUsers);
         }
     });
     // seed the DB

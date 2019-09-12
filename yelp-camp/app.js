@@ -6,12 +6,13 @@ const express = require('express'),
       localStrategy = require('passport-local'),
       session = require('express-session'),
       methodOverride = require('method-override'),
+      flash = require('connect-flash'),
       User = require('./models/users'),
       seedDB = require('./seedDB'),
       indexRoutes = require('./routes/index'),
       campgroundRoutes = require('./routes/campgrounds'),
       commentRoutes = require('./routes/comments');
-
+      
 // =================================
 ///////////// SETTINGS /////////////
 // =================================
@@ -38,6 +39,8 @@ require('dotenv').config();
 // set our local port
 const PORT = process.env.LOCAL_PORT;
 
+// Setup flash messages
+app.use(flash());
 // set view engine template to ejs
 app.set('view engine', 'ejs');
 // body parser for POST requests
@@ -46,11 +49,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/includes" ));
 // setup method override override like this .... method="POST" action="/url/?_method=delete
 app.use(methodOverride('_method'));
-// middleware, pass local username into all template
+// middleware, pass local username and flash messages into all templates
+// so that we can use them app-wide
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
+    res.locals.error_message = req.flash('error');
+    res.locals.success_message = req.flash('success');
     next();
-})
+});
 
 /////// SETUP ROUTER /////////
 

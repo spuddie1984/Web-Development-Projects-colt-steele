@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-<main class="container">
     <section class="row d-flex justify-content-center my-4">
         <div class="col-md-6">
             <div class="jumbotron py-4">
@@ -20,6 +19,9 @@
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="campground[image]" id="image-url" value="<%= campground.image %>" placeholder="Image URL" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" step="0.01"  name="campground[price]" id="price" value="<%= campground.price %>" placeholder="Campground Price per Night" required>
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" name="campground[description]" id="description" placeholder="Description" required><%= campground.description %></textarea>
